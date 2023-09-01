@@ -1,0 +1,46 @@
+        HashMap<Integer,Integer> mp=new HashMap<>();
+         int r;
+        for(int i=0;i<=input2-1;i++)
+        {
+          if(input1[i]>10)
+          {
+              while(input1[i]!=0)
+              {
+                  r=input1[i]%10;
+                // mp.put(r, mp.getOrDefault(r,0)+1);
+                if(mp.containsKey(r)) mp.put(r, mp.get(r)+1);
+                else mp.put(r, 1);
+
+                  input1[i]=input1[i]/10;
+              }
+
+
+          }
+          else 
+          {
+                 if(mp.containsKey(input1[i])) mp.put(input1[i], mp.get(input1[i])+1);
+                else mp.put(input1[i], 1);
+                 // mp.put(input1[i], mp.getOrDefault(input1[i],0)+1);
+          }
+
+        }
+        int max=0;
+     
+        int t=0;
+        for(int i=9;i>=0;i--)
+        {
+            if(mp.containsKey(i)) 
+            {
+                if(max<mp.get(i))
+                {
+                    max=mp.get(i);
+                    t=i;
+                }
+            }
+        }
+        return t;
+
+
+		//throw new UnsupportedOperationException("mostFrequentlyOccurringDigit(int[] input1,int input2)");
+	}
+}

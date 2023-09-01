@@ -1,0 +1,31 @@
+      int l=0,c=0,a=0;
+        boolean t=false;
+
+    for(int i=0;i<=input2-2;i++)
+    {
+        if(input1[i]>input1[i+1])
+        {
+            if(t==false)
+            {
+                t=true;
+                c++;
+            }
+            a++;
+            if(a>l) l=a;
+
+        }
+        else
+        {
+            t=false;
+            a=0;
+        }
+    
+    
+   }
+   if(c>0) l++;
+
+   Result re=new Result(c,l);
+   return re;
+   // throw new UnsupportedOperationException("decreasingSeq(int[] input1,int input2)");
+    }
+}

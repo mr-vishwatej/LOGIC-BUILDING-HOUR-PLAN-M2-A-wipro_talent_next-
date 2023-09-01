@@ -1,0 +1,29 @@
+String input2=input1.toUpperCase();
+
+        String str[]=input2.split(" ");
+        String s="";
+
+        for(int i=0;i<str.length;i++)
+        {
+           s+=result(str[i]);
+        }
+
+   return Integer.parseInt(s);
+
+	//	throw new UnsupportedOperationException("findStringCode(String input1)");
+	}
+    public String result( String s)
+    {
+        int sum=0;
+        int lp=0,rp=s.length()-1;
+        while(lp<rp)
+        {
+           sum+=Math.abs((int)s.charAt(lp)-(int)s.charAt(rp));
+           lp++;
+           rp--;
+        }
+        if(rp==lp) sum+=(int)s.charAt(lp)-64;
+        return Integer.toString(sum);
+
+    }
+}

@@ -1,0 +1,56 @@
+int a=input1.length();
+        int b=input2.length();
+        if(a<b)
+        {
+            for(int i=0;i<b-a;i++)
+            {
+                input1="0"+input1;
+            }
+
+        }
+        else
+        {
+            
+            for(int i=0;i<a-b;i++)
+            {
+                input2="0"+input2;
+            }
+
+        }
+        String st=fun(input1,input2,input2.length()-1,0);
+        String re="";
+        for(int i=st.length()-1;i>=0;i--)
+        {
+            re+=st.charAt(i);
+        }
+        return re;
+        
+		//throw new UnsupportedOperationException("addNumberStrings(String input1,String input2)");
+	}
+    static String str="";
+    static  String fun(String a,String b,int i,int h)
+    {
+        if(i==-1) 
+        {
+            if(h>0) 
+            {
+                str+=Integer.toString(h);
+
+            }
+            return str;
+        }
+        int x=(int)a.charAt(i)-48;
+        int y=(int)b.charAt(i)-48;
+
+        int t=x+y+h;
+        if(t<10)
+        {
+            
+            str+=Integer.toString(t);
+            return fun(a,b,i-1,0);
+        }
+        str+=Integer.toString(t%10);
+        return fun(a,b,i-1,t/10);
+
+    } 
+}

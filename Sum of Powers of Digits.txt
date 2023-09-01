@@ -1,0 +1,13 @@
+int s=0;
+        String str=Integer.toString(input1);
+        for(int i=0;i<str.length()-1;i++)
+        {
+            int a=(int)str.charAt(i)-48;
+            int b=(int)str.charAt(i+1)-48;
+            s+=Math.pow(a, b);
+
+        }
+        return s+1;
+		//throw new UnsupportedOperationException("sumOfPowerOfDigits(int input1)");
+	}
+}

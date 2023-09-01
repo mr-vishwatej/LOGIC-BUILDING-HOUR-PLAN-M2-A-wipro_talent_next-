@@ -1,0 +1,33 @@
+ int t=0;
+        int x=0;
+        int r;
+        while(input1!=0)
+        {
+            r=input1%10;
+            t=t*10+r;
+            input1=input1/10;
+
+        }
+        while(t!=0)
+        {
+             x=x+digitsum(t);
+              t=t/10;
+        }
+        return x;
+
+		//throw new UnsupportedOperationException("sumOfSumsOfDigits(int input1)");
+    }
+    
+    public int digitsum(int n)
+    {
+        int r,s=0;
+        while(n!=0)
+        {
+            r=n%10;
+            s=s+r;
+            n=n/10;
+        }
+      
+        return s;
+    }
+}

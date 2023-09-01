@@ -1,0 +1,56 @@
+        String a="";
+        String b="";
+        String c="";
+        String s[]={input1,input2,input3};
+        int t;
+        for(int i=0;i<s.length;i++)
+        {
+            if(s[i].length()%3==0)
+            {
+                t=s[i].length()/3;
+                a+=s[i].substring(0, t);
+                b+=s[i].substring(t, s[i].length()-t);
+                c+=s[i].substring(s[i].length()-t,s[i].length());
+
+            }else if(s[i].length()%3==1)
+            {
+
+                t=s[i].length()/3;
+                a+=s[i].substring(0, t);
+                b+=s[i].substring(t, s[i].length()-t);
+                c+=s[i].substring(s[i].length()-t,s[i].length());
+
+            }
+            else if(s[i].length()%3==2)
+            {   
+                t=s[i].length()/3;
+                a+=s[i].substring(0, t+1);
+                b+=s[i].substring(t+1, s[i].length()-t-1);
+                c+=s[i].substring(s[i].length()-t-1,s[i].length());
+
+            }
+
+        }
+        String h="";
+        
+        for(int i=0;i<c.length();i++)
+        {
+            
+            char ch=c.charAt(i);
+            
+            if(Character.isLowerCase(ch))
+            {
+                h+=Character.toUpperCase(ch);
+            }else
+            {
+                h+=Character.toLowerCase(ch);
+            }
+            
+        } 
+        Result re=new Result(a,b,h);
+        return re;
+
+
+       // throw new UnsupportedOperationException("encodeThreeStrings(String input1,String input2,String input3)");
+    }
+}
